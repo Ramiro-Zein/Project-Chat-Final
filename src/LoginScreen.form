@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Login_screen">
+  <grid id="27dc6" binding="principal" layout-manager="GridBagLayout">
+    <constraints>
+      <xy x="86" y="50" width="450" height="700"/>
+    </constraints>
+    <properties>
+      <background color="-14211289"/>
+      <font name="Berlin Sans FB Demi" style="1"/>
+      <foreground color="-1"/>
+      <minimumSize width="450" height="700"/>
+      <preferredSize width="450" height="700"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="26f95" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="1.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <font name="Cooper Black" size="28" style="0"/>
+          <foreground color="-1"/>
+          <horizontalAlignment value="0"/>
+          <horizontalTextPosition value="0"/>
+          <text value="U S U A R I O"/>
+        </properties>
+      </component>
+      <component id="8dd7c" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <font size="18" style="1"/>
+          <foreground color="-1"/>
+          <text value="Nombre de usuario"/>
+        </properties>
+      </component>
+      <component id="81ec2" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+        <constraints>
+          <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <font size="18" style="1"/>
+        </properties>
+      </component>
+      <component id="3ff5e" class="javax.swing.JButton" binding="button1" default-binding="true">
+        <constraints>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag top="1" left="1" bottom="1" right="1" weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <background color="-14211289"/>
+          <enabled value="false"/>
+          <hideActionText value="false"/>
+          <icon value="Resources/user.png"/>
+          <inheritsPopupMenu value="false"/>
+          <maximumSize width="75" height="75"/>
+          <minimumSize width="75" height="75"/>
+          <preferredSize width="70" height="70"/>
+          <selected value="false"/>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="7890e" class="javax.swing.JButton" binding="comenzarButton" default-binding="true">
+        <constraints>
+          <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <background color="-2104859"/>
+          <font size="18" style="1"/>
+          <text value="Agregar"/>
+        </properties>
+      </component>
+      <grid id="e2d1c" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <background color="-14211289"/>
+          <preferredSize width="30" height="30"/>
+        </properties>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="611e3" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <background color="-14211289"/>
+          <preferredSize width="30" height="30"/>
+        </properties>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="5ba60" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <background color="-14211289"/>
+          <preferredSize width="30" height="3"/>
+        </properties>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="27da0" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints>
+          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <background color="-14211289"/>
+          <preferredSize width="25" height="25"/>
+        </properties>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="f04f7" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints>
+          <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <alignmentX value="1.0"/>
+          <alignmentY value="1.0"/>
+          <background color="-14211289"/>
+          <preferredSize width="30" height="30"/>
+        </properties>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="c4d2f" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <background color="-14211289"/>
+        </properties>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="1c9d3" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints>
+          <grid row="10" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <background color="-14211289"/>
+        </properties>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="31cd0" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints>
+          <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <background color="-14211289"/>
+        </properties>
+        <border type="none"/>
+        <children/>
+      </grid>
+    </children>
+  </grid>
+</form>
