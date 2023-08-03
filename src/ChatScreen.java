@@ -1,6 +1,9 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 
 public class ChatScreen extends JFrame {
@@ -23,10 +26,21 @@ public class ChatScreen extends JFrame {
         frame.setVisible(true);
         frame.setResizable(false);
 
+
         // Inicializar el cliente
         iniciarCliente(usuario);
         // Agregar eventos
         agregarEventos();
+
+        campoMensaje.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER && !campoMensaje.getText().isEmpty()) {
+                    enviarMensaje(campoMensaje.getText());
+                    campoMensaje.setText("");
+                }
+            }
+        });
     }
 
     public interface MensajeListener {
@@ -44,7 +58,7 @@ public class ChatScreen extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String mensaje = campoMensaje.getText();
                 if (!mensaje.isEmpty()) {
-                    enviarMensaje(mensaje);
+                    enviarMensaje(campoMensaje.getText());
                     campoMensaje.setText("");
                 }
             }
@@ -54,7 +68,7 @@ public class ChatScreen extends JFrame {
             @Override
             public void onMensajeRecibido(String mensaje) {
                 SwingUtilities.invokeLater(() -> {
-                    areaMensajes.append(mensaje + "\n");
+                    areaMensajes.append("- " + mensaje + "\n");
                 });
             }
         });

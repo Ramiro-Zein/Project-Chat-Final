@@ -50,6 +50,11 @@ public class Cliente extends Thread {
         System.out.println("Usuario '" + usuario + "' envio mensaje: " + mensaje);
     }
 
+    public void enviarNombre(String mensaje) {
+        salida.println(usuario + ": " + mensaje);
+        System.out.println("Usuario '" + usuario + "' envio mensaje: " + mensaje);
+    }
+
     public void setMensajeListener(ChatScreen.MensajeListener listener) {
         this.mensajeListener = listener;
     }
