@@ -1,73 +1,56 @@
-import java.awt.*;
-import java.io.*;
-import java.net.*;
-import java.util.*;
-import java.util.List;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
+import java.net.UnknownHostException;
 
 public class Cliente extends Thread {
-    private final String usuario;
-    public String getUsuario () {
-        return usuario;
-    }
-    private final String ipServidor;
-    private final int puerto;
     private Socket socket;
+    private String usuario;
     private BufferedReader entrada;
     private PrintWriter salida;
-    public List<String> mensajes = new ArrayList<>();
-    private String MessageSever;
+    private ChatScreen.MensajeListener mensajeListener;
 
     public Cliente(String ipServidor, int puerto, String usuario) {
-        this.ipServidor = ipServidor;
-        this.puerto = puerto;
-        this.usuario = usuario;
+        try {
+            this.socket = new Socket(ipServidor, puerto);
+            this.usuario = usuario;
+            // La entrada es para leer los mensajes del servidor
+            entrada = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            // La salida es para enviar mensajes al servidor
+            salida = new PrintWriter(socket.getOutputStream(), true);
+        } catch (UnknownHostException e) {
+            System.err.println("No se pudo encontrar el host: " + ipServidor);
+        } catch (IOException e) {
+            System.err.println("No se pudo obtener I/O para la conexión con: " + ipServidor);
+        }
     }
 
     @Override
     public void run() {
         try {
-            socket = new Socket(ipServidor, puerto);
-            entrada = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            salida = new PrintWriter(socket.getOutputStream(), true);
-
-            // Enviar el nombre de usuario al servidor
-            salida.println(usuario);
-
-            // Comenzar el bucle para recibir mensajes del servidor
-            recibirMensajes();
-
-        } catch (IOException e) {
-            System.out.println("Error al conectar al servidor");
+            while (true) {
+                String mensaje = entrada.readLine();
+                if (mensaje.equalsIgnoreCase("bye")) {
+                    break;
+                }
+                if (mensajeListener != null) {
+                    mensajeListener.onMensajeRecibido(mensaje);
+                }
+            }
+            socket.close();
+        } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    public void recibirMensajes() {
-        // Crear un hilo para leer los mensajes del servidor
-        Thread messageReaderThread = new Thread(() -> {
-            try {
-                String serverMessage;
-                while ((serverMessage = entrada.readLine()) != null) {
-                    System.out.println("Server: " + serverMessage);
-                    mensajes.add(serverMessage);
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        messageReaderThread.start();
     }
 
     public void enviarMensaje(String mensaje) {
-        salida.println(mensaje);
+        salida.println(usuario + ": " + mensaje);
+        System.out.println("Usuario '" + usuario + "' envio mensaje: " + mensaje);
     }
 
-    public void desconectar() {
-        try {
-            if (socket != null)
-                socket.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void setMensajeListener(ChatScreen.MensajeListener listener) {
+        this.mensajeListener = listener;
     }
 }

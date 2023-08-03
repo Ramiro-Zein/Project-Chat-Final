@@ -1,9 +1,7 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
+
 
 public class ChatScreen extends JFrame {
     private JPanel panelPrincipal;
@@ -13,9 +11,6 @@ public class ChatScreen extends JFrame {
     private JTextArea areaMensajes;
     private JPanel panelMensaje;
     private Cliente cliente;
-    private String userName;
-
-    private String mensajeAll;
 
     public ChatScreen(String usuario) {
         // Inicializar la interfaz gráfica
@@ -30,42 +25,44 @@ public class ChatScreen extends JFrame {
 
         // Inicializar el cliente
         iniciarCliente(usuario);
-        // Agregar los eventos
+        // Agregar eventos
         agregarEventos();
+    }
 
+    public interface MensajeListener {
+        void onMensajeRecibido(String mensaje);
     }
 
     private void iniciarCliente(String usuario) {
         cliente = new Cliente("localhost", 6075, usuario);
         cliente.start();
-        userName = cliente.getUsuario();
     }
 
     private void agregarEventos() {
         botonEnviar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String textoMensaje = campoMensaje.getText();
-                if (!textoMensaje.isEmpty()) {
-                    enviarMensaje(textoMensaje);
+                String mensaje = campoMensaje.getText();
+                if (!mensaje.isEmpty()) {
+                    enviarMensaje(mensaje);
                     campoMensaje.setText("");
-                    recibirMensajes();
-                    mensajeAll = textoMensaje;
-                    areaMensajes.append(userName + ": " + textoMensaje + "\n");
                 }
+            }
+        });
+
+        cliente.setMensajeListener(new MensajeListener() {
+            @Override
+            public void onMensajeRecibido(String mensaje) {
+                SwingUtilities.invokeLater(() -> {
+                    areaMensajes.append(mensaje + "\n");
+                });
             }
         });
     }
 
-    public void enviarMensaje(String textoMensaje) {
-        cliente.enviarMensaje(textoMensaje);
+    public void enviarMensaje(String mensaje) {
+        cliente.enviarMensaje(mensaje);
     }
 
-    public void recibirMensajes() {
-        List<String> mensajes = cliente.mensajes;
-        cliente.mensajes.clear();
-        for (String mensaje : mensajes) {
-            areaMensajes.append(mensaje + "\n");
-        }
-    }
+
 }
