@@ -18,7 +18,6 @@ public class IpScreen extends JFrame{
         frame.setVisible(true);
         frame.setResizable(false);
 
-
         button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

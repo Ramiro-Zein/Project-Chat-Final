@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Chat_screen">
-  <grid id="27dc6" binding="principal_chat" layout-manager="GridBagLayout">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="ChatScreen">
+  <grid id="27dc6" binding="panelPrincipal" layout-manager="GridBagLayout">
     <constraints>
       <xy x="20" y="20" width="450" height="700"/>
     </constraints>
@@ -10,7 +10,7 @@
     </properties>
     <border type="none"/>
     <children>
-      <component id="d2c50" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+      <component id="d2c50" class="javax.swing.JTextField" binding="campoMensaje">
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -23,7 +23,7 @@
           <preferredSize width="660" height="30"/>
         </properties>
       </component>
-      <component id="f3dc6" class="javax.swing.JButton" binding="button1" default-binding="true">
+      <component id="f3dc6" class="javax.swing.JButton" binding="botonEnviar">
         <constraints>
           <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.0" weighty="0.0"/>
@@ -38,7 +38,7 @@
           <text value=""/>
         </properties>
       </component>
-      <grid id="e57c1" binding="pane2" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+      <grid id="e57c1" binding="panelMensajes" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.0" weighty="0.0"/>
@@ -51,11 +51,12 @@
         </properties>
         <border type="none"/>
         <children>
-          <component id="c58a4" class="javax.swing.JTextArea" binding="jtextarea">
+          <component id="c58a4" class="javax.swing.JTextArea" binding="areaMensajes">
             <constraints/>
             <properties>
               <background color="-1579033"/>
               <caretColor color="-16777216"/>
+              <editable value="false"/>
               <enabled value="true"/>
               <font size="18" style="1"/>
               <foreground color="-1579033"/>

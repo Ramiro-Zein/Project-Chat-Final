@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Login_screen">
-  <grid id="27dc6" binding="principal" layout-manager="GridBagLayout">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="LoginScreen">
+  <grid id="27dc6" binding="panelPrincipal" layout-manager="GridBagLayout">
     <constraints>
       <xy x="86" y="50" width="450" height="700"/>
     </constraints>
@@ -37,7 +37,7 @@
           <text value="Nombre de usuario"/>
         </properties>
       </component>
-      <component id="81ec2" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+      <component id="81ec2" class="javax.swing.JTextField" binding="textoUsuario">
         <constraints>
           <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -48,7 +48,7 @@
           <font size="18" style="1"/>
         </properties>
       </component>
-      <component id="3ff5e" class="javax.swing.JButton" binding="button1" default-binding="true">
+      <component id="3ff5e" class="javax.swing.JButton" binding="botonUsuario">
         <constraints>
           <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <gridbag top="1" left="1" bottom="1" right="1" weightx="0.0" weighty="0.0"/>
@@ -66,13 +66,13 @@
           <text value=""/>
         </properties>
       </component>
-      <component id="7890e" class="javax.swing.JButton" binding="comenzarButton" default-binding="true">
+      <component id="7890e" class="javax.swing.JButton" binding="botonIniciar">
         <constraints>
           <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
-          <background color="-2104859"/>
+          <background color="-1579033"/>
           <font size="18" style="1"/>
           <text value="Agregar"/>
         </properties>
