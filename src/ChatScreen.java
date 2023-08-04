@@ -15,6 +15,8 @@ public class ChatScreen extends JFrame {
     private JPanel panelMensaje;
     private Cliente cliente;
 
+    // 127.0.0.1  - Localhost
+
     public ChatScreen(String usuario) {
         // Inicializar la interfaz gráfica
         JFrame frame = new JFrame();
@@ -42,6 +44,7 @@ public class ChatScreen extends JFrame {
             }
         });
     }
+
 
     public interface MensajeListener {
         void onMensajeRecibido(String mensaje);

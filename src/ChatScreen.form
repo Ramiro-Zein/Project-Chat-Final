@@ -60,9 +60,11 @@
               <enabled value="true"/>
               <font size="18" style="1"/>
               <foreground color="-1579033"/>
+              <lineWrap value="true"/>
               <minimumSize width="390" height="585"/>
               <opaque value="false"/>
               <preferredSize width="390" height="585"/>
+              <wrapStyleWord value="false"/>
             </properties>
           </component>
         </children>
